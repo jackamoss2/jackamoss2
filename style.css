@@ -1,0 +1,50 @@
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+a {
+    color: black;
+}
+
+h2 {
+    color:dimgrey;
+    text-align: left;
+    padding-left: 32px;;
+}
+
+li {
+    list-style: none;
+    padding: 8px;
+}
+
+p {
+    padding: 7px;
+}
+
+.overview, .bio {
+    background-color: antiquewhite;
+}
+
+.overview *, .bio * {
+    margin:0;
+}
+
+.flex-gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects ul li {
+    list-style: none;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    border: 1px solid #C2D7F2;
+}
+
+.contact ul li {
+    list-style: none;
+    display: inline;
+    padding: 16px;
+}
