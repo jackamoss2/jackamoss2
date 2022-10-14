@@ -7,8 +7,12 @@ a {
     color: black;
 }
 
+h1 {
+    padding: 32px;
+}
+
 h2 {
-    color:dimgrey;
+    color:dimgray;
     text-align: left;
     padding-left: 32px;;
 }
@@ -23,7 +27,8 @@ p {
 }
 
 .overview, .bio {
-    background-color: antiquewhite;
+    background-color: dimgray;
+    color: white;
 }
 
 .overview *, .bio * {
@@ -33,6 +38,12 @@ p {
 .flex-gallery {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 500px;
+}
+
+.projects * {
+    margin: auto;
 }
 
 .projects ul li {
@@ -40,7 +51,7 @@ p {
     padding: 16px;
     margin: 16px;
     border-radius: 8px;
-    border: 1px solid #C2D7F2;
+    border: 1px solid dimgray;
 }
 
 .contact ul li {
