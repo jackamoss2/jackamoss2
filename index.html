@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack Amoss | Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="nav-mobile-placeholder">
+    </div>
+    <div id="header-mobile-wrapper">
+        <a href="#main">
+            <div id="header-mobile">
+                <h1>Jack Amoss</h1>
+                <h3>Full Stack Developer</h3>
+            </div>
+        </a>
+    </div>
+    <div id="nav-links-mobile">
+        <a href="#about-div">About</a>
+        <a href="#projects-div">Projects</a>
+        <a href="#education-div">Education</a>
+        <a href="#contact-div">Contact</a>
+        <a href="#resume-div">Resume</a>
+    </div>
+    <div id="nav-desktop-placeholder"> <!-- nav is fixed pos, wrapper holds space -->
+    </div>
+    <div id="nav"> <!-- #nav always visible, toggles contents to show nav list -->
+        <a href="#main" id="nav-header-desktop">
+            <h1>Jack Amoss</h1>
+            <h5>Full Stack Developer</h5>
+        </a>
+        <div id="nav-links-wrapper">
+            <div id="nav-links">
+                <a href="#about-div" class="nav-item">About</a>
+                <a href="#projects-div" class="nav-item">Projects</a>
+                <a href="#education-div" class="nav-item">Education</a>
+                <a href="#contact-div" class="nav-item">Contact</a>
+                <a href="#resume-div" class="nav-item">Resume</a>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="main-img">
+
+        </div>
+        <div id="about-div" class="section">
+            <div class="section-title">
+                <h1>ABOUT</h1>
+            </div>
+            <div class="section-body">
+                orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
+        </div>
+        <div id="projects-div" class="section">
+            <div class="section-title">
+                <h1>PROJECTS</h1>
+            </div>
+            <div class="section-body">
+                <div class="body-card">
+                    <div class="body-card-contents">
+                        <!-- image -->
+                        <h3>GeograFish</h3>
+                        <p>text about project</p>
+                    </div>
+                </div>
+                <div class="body-card">
+                    <div class="body-card-contents">
+                        <!-- image -->
+                        <h3>Recipe Scraper</h3>
+                        <p>text about project</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="education-div" class="section">
+            <div class="section-title">
+                <h1>EDUCATION</h1>
+            </div>
+            <div id="education-section" class="section-body">
+                <div class="body-card">
+                    <div class="body-card-contents">
+                        <h3>GEORGIA INSTITUTE OF TECHNOLOGY</h3>
+                        <h5>Atlanta, GA</h5>
+                        <p>B.S. in Environmental Engineering</p>
+                    </div>
+                </div>
+                <div class="body-card">
+                    <div class="body-card-contents">
+                        <h3>PDX CODE GUILD</h3>
+                        <h5>Portland, OR</h5>
+                        <p>Python-Based Full Stack Web Development Bootcamp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact-div" class="section">
+            <div class="section-title">
+                <h1>CONTACT</h1>
+            </div>
+            <div id="contact-section-wrapper" class="section-body">
+                <div id="contact-section">
+                    <a href="https://github.com/jackamoss2" target="_blank" class="content-slip">
+                        <div class="contact-icon">
+                            <img src="./images/github.svg" class="filter-navy" alt="Github Icon">
+                        </div>
+                        <p>github.com/jackamoss2</p> 
+                    </a>
+                    <a href="https://www.linkedin.com/in/jackamoss/" target="_blank" class="content-slip">
+                        <div class="contact-icon">
+                            <img src="./images/linkedin.svg" class="filter-navy" alt="LinkedIn Icon">
+                        </div>
+                        <p>linkedin.com/in/jackamoss</p> 
+                    </a>
+                    <a href="mailto:jack@jackamoss.com" class="content-slip">
+                        <div class="contact-icon">
+                            <img src="./images/envelope-solid.svg" class="filter-navy" alt="Email Icon">
+                        </div>
+                        <p>jack@jackamoss.com</p>
+                    </a>
+                </div>
+                </div>
+        </div>
+        <div id="resume-div" class="section">
+            <div class="section-title">
+                <h1>RESUME</h1>
+            </div>
+            <div id="resume-section" class="section-body">
+                <a href="https://docs.google.com/document/d/1_aQCjujcLprWIJLyJdhcOSJdh945GoIEyw8YfOpZLd8/edit?usp=sharing" target="_blank" class="content-slip">
+                    <div class="contact-icon">
+                        <img src="./images/file-solid.svg" class="filter-navy" alt="Resume Icon" height="32">
+                    </div>
+                    <p>Jack Amoss Resume</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
