@@ -1,19 +1,15 @@
 /* 
 #000000
-#14213D
+#219472
 #FCA311
 #e5e5e5
 #ffffff
 */
 
 body {
-    display: flex;
-    flex-direction: column;
-    /* font-family: 'Bebas Neue', cursive; */
-    font-family: 'Roboto', sans-serif;
-    font-style: normal;
     background-color: #e5e5e5;
 }
+
 
 ul {
     list-style-type: none;
@@ -32,7 +28,7 @@ html {
 }
 
 .nav-item:hover {
-    background-color: #e5e5e5;
+    background-color: white;
     transition: 0.3s;
 }
 
@@ -40,10 +36,17 @@ html {
     color:black;
 }
 
+.section {
+    background-color: white;
+    border-bottom: 1px solid rgb(189, 189, 189);
+    border-top: 1px solid rgb(189, 189, 189);
+    margin-bottom:12px;
+}
+
 .section-title {
-    background-color:#14213D;
-    padding: 2em;
-    padding-left: 7em;
+    background-color:#219472;
+    padding: 1em;
+    height:38px;
 }
 
 .section-title h1 {
@@ -53,7 +56,9 @@ html {
 }
 
 .section-body {
-    margin:3em 2em 4em 2em;
+    margin:1em 2em 1em 2em;
+    padding-top:2em;
+    padding-bottom:2em;
 }
 
 .section-body h3,p {
@@ -71,7 +76,7 @@ html {
 }
 
 .body-card-contents h3 {
-    color: #14213D;
+    color: #94412B;
 }
 
 .body-card-contents h5 {
@@ -95,7 +100,7 @@ html {
     flex-direction: row;
     align-items:center;
     text-decoration: none;
-    color: #14213D;
+    color: #219472;
     transition: 0.3s;
     margin:0;
     margin-bottom:2em;
@@ -106,7 +111,7 @@ html {
 
 .content-slip:hover {
     /* text-decoration: underline; */
-    background-color: #ffffff;
+    background-color: #e5e5e5;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -120,8 +125,23 @@ html {
     filter: invert(10%) sepia(32%) saturate(1870%) hue-rotate(190deg) brightness(96%) contrast(94%);
 }
 
+.ed-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#body-container {
+    display: flex;
+    flex-direction: column;
+    /* font-family: 'Bebas Neue', cursive; */
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    /* background-color: #e5e5e5; */
+}
+
 #nav {
-    background-color: #FFFFFF;
+    /* background-color: #FFFFFF; */
     position: fixed;
     box-shadow: 0 5px 5px 0 rgb(117, 107, 107);
     height: 100%;
@@ -138,11 +158,15 @@ html {
 }
 
 #nav-header-desktop * {
-    font-weight:200;
+    font-weight:400;
     text-decoration: none;
-    color: #14213D;
-    padding-left:28px;
+    color: #94412B;
+    padding-left:24px;
     margin:8px;
+}
+
+#nav-header-desktop h5 {
+    color: #219472;
 }
 
 #nav-links-wrapper {
@@ -159,14 +183,15 @@ html {
     background-color: white;
     box-shadow: 0 5px 5px 0 rgb(117, 107, 107);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 #nav-links-mobile * {
+    color:black;
     margin: 0;
-    padding: 8px;
+    padding: 12px;
     text-decoration: none;
-    color: #14213D;
+    /* color: #219472; */
 }
 
 #header-mobile-wrapper {
@@ -183,7 +208,7 @@ html {
     height: 100px;
     width:100%;
     position: fixed;
-    color: #14213D;
+    color: #219472;
     text-align: center;
 }
 
@@ -192,6 +217,7 @@ html {
     margin-bottom: 0;
     font-family: 'Roboto', sans-serif;
     font-weight:400;
+    color: #94412B;
 }
 
 #header-mobile h3 {
@@ -207,7 +233,7 @@ html {
     display: none;
 }
 
-#nav-mobile-placeholder {
+#home {
     height: 100px;
     width:100%; 
 }
@@ -216,6 +242,20 @@ html {
     background-image: url("./images/main-img.jpg");
     width: 100%;
     min-height: 500px;
+    margin-bottom:12px;
+}
+
+#education-section div {
+    margin:20px;
+    margin-bottom:48px;
+}
+
+#education-section div * {
+    margin:8px;
+}
+
+#education-section h1 {
+    color: #94412B;
 }
 
 #contact-section {
@@ -240,23 +280,68 @@ html {
     margin-bottom: 4em;
 }
 
-/* transition to alternate card layout */
-@media (min-width: 560px) {
+svg {
+    height:100px;
+    width:100px;
+    padding-right:30px;
+}
+
+#gtlogo {
+    height:100px;
+    /* width:100px; */
+}
+
+/* transition to alternate education card layout */
+/* @media (min-width: 560px) {
     #education-section {
         display: flex;
         flex-direction: row;
     }
     
     #education-section div {
-        /* max-width: 48%; */
         margin-left: .5em;
         margin-right: .5em;
         flex-grow: 1;
     }
     
-}
+} */
 
 @media (min-width: 810px) {
+    .section {
+        margin:12px;
+        border-radius: 8px;
+        border: 1px solid rgb(189, 189, 189);
+
+    }
+
+    .section-title {
+        width:300px;
+        border-radius: 8px 0px 0px 0px;
+    }
+    
+    .section-title-style {
+        display:flex;
+        flex-direction: row;
+        height: 70px;
+    }
+    
+    .cornered-section-title {
+        /* position: absolute; */
+        height: 0;
+        border-style: solid;
+        padding-top:10px;
+        border-width: 0 0 60px 60px;
+        border-color: transparent transparent transparent #219472;
+    }
+    
+    .line-section-title {
+        /* position: absolute; */
+        width:100%;
+        height:10px;
+        background-color:#219472;
+        border-radius: 0px 8px 0px 0px;
+    }
+    
     #contact-section {
         flex-direction: row;
         justify-content: space-between;
@@ -267,6 +352,14 @@ html {
 /* transition to alternate card layout */
 @media (min-width: 1000px) {
     body {
+        margin:auto;
+    }
+    
+    .section-title {
+        padding-left: 7em;
+    }
+    
+    #body-container {
         flex-direction: row;
     }
 
@@ -278,7 +371,7 @@ html {
         width: 200px;
     }
     
-    #nav-mobile-placeholder {
+    #home {
         display: none;
     }
 
@@ -298,4 +391,33 @@ html {
         display:block;
     }
     
+}
+
+@media (min-width: 1400px) {
+    /* body {
+        background-color: #EBF7F4;
+    } */
+    #nav {
+        box-shadow: none;
+    }
+
+    #main {
+        max-width: 1200px;
+    }
+
+    #body-container {
+        max-width: 1400px;
+        margin:auto;
+        /* box-shadow: 0 5px 5px 0 rgb(117, 107, 107); */
+    }
+
+    /* #body-container {
+        margin:auto;
+    } */
+}
+
+@media (min-width: 1600px) {
+    body {
+        margin-right:200px;
+    }
 }
