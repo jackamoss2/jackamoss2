@@ -27,7 +27,7 @@
             <a href="#projects-div">Projects</a>
             <a href="#education-div">Education</a>
             <a href="#contact-div">Contact</a>
-            <a href="#resume-div">Resume</a>
+            <a href="#resume-div" id="mobile-nav-resume">Resume</a>
         </div>
         <div id="nav-desktop-placeholder"> <!-- nav is fixed pos, wrapper holds space -->
         </div>
@@ -63,25 +63,33 @@
             </div>
             <div id="projects-div" class="section">
                 <div class="section-title-style">
-                    <div class="section-title">
-                        <h1>PROJECTS</h1>
+                    <div id="projects-section-title" class="section-title">
+                        <h1>PERSONAL PROJECTS</h1>
                     </div>
                     <div class="cornered-section-title"></div>
                     <div class="line-section-title"></div>
                 </div>
-                <div class="section-body">
+                <div id="projects-gallery" class="section-body">
                     <div class="body-card">
-                        <div class="body-card-contents">
-                            <!-- image -->
-                            <h3>GeograFish</h3>
-                            <p>text about project</p>
+                        <div class="body-card-contents project-card">
+                            <div class="project-info">
+                                <h2>GeograFish</h2>
+                                <p>A web app allowing users to make accounts, upload GIS data, view attributes, style data objects, and share maps via unique URL or user profile.</p>
+                                <br>
+                                <p>Built with Django REST Framework, Python, JavaScript, ArcGIS API for Javascript, and Vue.js</p>
+                            </div>
+                            <img src="./images/map_sample.png" class="project-img" alt="map screenshot">
                         </div>
                     </div>
                     <div class="body-card">
-                        <div class="body-card-contents">
-                            <!-- image -->
-                            <h3>Recipe Scraper</h3>
-                            <p>text about project</p>
+                        <div class="body-card-contents project-card">
+                            <div class="project-info">
+                                <h2>Recipe Scraper</h2>
+                                <p>A python script to scrape a given webpage for a recipe, returning the recipe ingredients and instructions without the extra fluff commonly found in food blogs.</p>
+                                <br>
+                                <p>Built with Python and BeautifulSoup</p>
+                            </div>
+                            <img src="./images/recipe.png" class="project-img" alt="recipe screenshot">
                         </div>
                     </div>
                 </div>
@@ -148,17 +156,17 @@
                 </div>
                 <div id="contact-section-wrapper" class="section-body">
                     <div id="contact-section">
-                        <a href="https://github.com/jackamoss2" target="_blank" class="content-slip">
-                            <div class="contact-icon">
-                                <img src="./images/github.svg" class="filter-navy" alt="Github Icon">
-                            </div>
-                            <p>github.com/jackamoss2</p> 
-                        </a>
                         <a href="https://www.linkedin.com/in/jackamoss/" target="_blank" class="content-slip">
                             <div class="contact-icon">
                                 <img src="./images/linkedin.svg" class="filter-navy" alt="LinkedIn Icon">
                             </div>
                             <p>linkedin.com/in/jackamoss</p> 
+                        </a>
+                        <a href="https://github.com/jackamoss2" target="_blank" class="content-slip">
+                            <div class="contact-icon">
+                                <img src="./images/github.svg" class="filter-navy" alt="Github Icon">
+                            </div>
+                            <p>github.com/jackamoss2</p> 
                         </a>
                         <a href="mailto:jack@jackamoss.com" class="content-slip">
                             <div class="contact-icon">
@@ -177,17 +185,26 @@
                     <div class="cornered-section-title"></div>
                     <div class="line-section-title"></div>
                 </div>
-                REDO RESUME BUTTON - ADD IMG
-                <div id="resume-section" class="section-body">
+                <div id="resume-link">
+                    <a href="https://docs.google.com/document/d/1_aQCjujcLprWIJLyJdhcOSJdh945GoIEyw8YfOpZLd8/edit?usp=sharing" target="_blank">
+                        <img src="images/arrow-right-to-bracket-solid.svg" id="resume-go-icon">
+                        <img src="images/resume.png" id="resume-img">
+                    </a>
+                </div>
+                <!-- <div id="resume-section" class="section-body">
                     <a href="https://docs.google.com/document/d/1_aQCjujcLprWIJLyJdhcOSJdh945GoIEyw8YfOpZLd8/edit?usp=sharing" target="_blank" class="content-slip">
                         <div class="contact-icon">
                             <img src="./images/file-solid.svg" class="filter-navy" alt="Resume Icon" height="32">
                         </div>
                         <p>Jack Amoss Resume</p>
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
 </body>
+<footer>
+    <br>
+    <p>Copyright © Jack Amoss 2023</p>
+</footer>
 </html>
