@@ -47,7 +47,9 @@
             </div>
         </div>
         <div id="main">
-            <div id="main-img">
+            <div id="main-img-wrapper">
+                <img src="images/main-img.jpg" id="main-img">
+                <div id="main-img-space"></div>
             </div>
             <div id="about-div" class="section">
                 <div class="section-title-style">
@@ -57,8 +59,26 @@
                     <div class="cornered-section-title"></div>
                     <div class="line-section-title"></div>
                 </div>
-                <div class="section-body">
-                    orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                <div class="section-body" id="about-text">
+                    <p>
+                        Hi, I'm Jack Amoss and I'm a Full Stack Software Developer. This website is my personal portfolio, where I share my personal projects and skill set.
+                    </p>
+                    <br>
+                    <p>
+                        I've been coding for the better part of one year. Previously, I worked as a junior civil design engineer for three years. That experience imparted in me a passion for team-based design, and an enthusiasm for impactful technology. I'm truly excited for my next phase of applying tech to bring meaning and value to projects of all sorts.
+                    </p>
+
+
+
+<!-- Hi, I'm Man Parvesh Singh Randhawa and I'm a Software Engineer at the world-renowned tech giant, Yahoo.
+I have been working in the tech industry for over five years now, and have been involved in many different projects during that time.
+This website is my personal portfolio and blog, where I share my insights and experiences in the tech world, as well as my thoughts on
+various topics. I'm always looking to learn more, and I'm excited to share the knowledge I've gained with the world.
+
+In my current role, I'm working on the backend of Yahoo Fantasy Sports.
+It's a stimulating and demanding job that has enabled me to expand my knowledge and skills within the tech industry.
+I'm constantly challenged to come up with creative solutions to complex problems, and I'm able to apply the latest technologies
+to Yahoo's products. It's an immensely rewarding experience, and I'm thankful for the opportunity to be part of the Yahoo team. -->
                 </div>
             </div>
             <div id="projects-div" class="section">
@@ -73,7 +93,10 @@
                     <div class="body-card">
                         <div class="body-card-contents project-card">
                             <div class="project-info">
-                                <h2>GeograFish</h2>
+                                <a href="https://geografish.herokuapp.com/" class="project-title" target="_blank">
+                                    <h2>GeograFish</h2>
+                                    <img src="images/arrow-right-to-bracket-solid.svg" alt="go to app icon">
+                                </a>
                                 <p>A web app allowing users to make accounts, upload GIS data, view attributes, style data objects, and share maps via unique URL or user profile.</p>
                                 <br>
                                 <p>Built with Django REST Framework, Python, JavaScript, ArcGIS API for Javascript, and Vue.js</p>
@@ -84,12 +107,15 @@
                     <div class="body-card">
                         <div class="body-card-contents project-card">
                             <div class="project-info">
-                                <h2>Recipe Scraper</h2>
+                                <div class="project-title">
+                                    <h2>Recipe Scraper</h2>
+                                </div>
                                 <p>A python script to scrape a given webpage for a recipe, returning the recipe ingredients and instructions without the extra fluff commonly found in food blogs.</p>
                                 <br>
                                 <p>Built with Python and BeautifulSoup</p>
                             </div>
-                            <img src="./images/recipe.png" class="project-img" alt="recipe screenshot">
+                            <img src="./images/recipe.png" class="project-img" id="recipe-img" alt="recipe screenshot">
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -187,7 +213,7 @@
                 </div>
                 <div id="resume-link">
                     <a href="https://docs.google.com/document/d/1_aQCjujcLprWIJLyJdhcOSJdh945GoIEyw8YfOpZLd8/edit?usp=sharing" target="_blank">
-                        <img src="images/arrow-right-to-bracket-solid.svg" id="resume-go-icon">
+                        <!-- <img src="images/arrow-right-to-bracket-solid.svg" id="resume-go-icon"> -->
                         <img src="images/resume.png" id="resume-img">
                     </a>
                 </div>
