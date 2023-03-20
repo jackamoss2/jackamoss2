@@ -98,7 +98,6 @@ a:link{
     padding-top:2em;
     padding-bottom:2em;
     color:#8b949e;
-    border-radius: 0px 0px 7px 7px;
 }
 
 .section-body h3,p {
@@ -500,9 +499,8 @@ svg {
 @media (min-width: 810px) {
     .section {
         margin:12px;
-        border-radius: 7px;
         border: 1px solid #30363d;
-
+        border-radius: 7px;
     }
 
     .section-title {
@@ -517,6 +515,9 @@ svg {
         height: 70px;
     }
     
+    .section-body {
+        border-radius: 0px 0px 7px 7px;
+    }
 
     #mobile-nav-resume {
         display: block;
@@ -531,6 +532,7 @@ svg {
     /* #main-img {
 
     } */
+    
 
     #contact-section {
         flex-direction: row;
