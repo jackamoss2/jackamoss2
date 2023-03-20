@@ -450,6 +450,8 @@ svg {
 
 #resume-download {
     color:#219472;
+    width:100%;
+    display: block;
     text-align: center;
 }
 
