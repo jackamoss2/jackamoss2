@@ -296,8 +296,7 @@ a:link{
 
 #nav-links-mobile * {
     color:#fafbfc;
-    margin: 0;
-    padding: 12px;
+    margin: 12px;
     text-decoration: none;
     /* color: #219472; */
 
@@ -308,7 +307,7 @@ a:link{
 }
 
 #header-mobile-wrapper {
-
+    background-color: black;
     height: 100px;
     width:100%;
     /* position: fixed; */
