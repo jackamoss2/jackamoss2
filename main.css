@@ -44,6 +44,7 @@ canvas {
     z-index: -1;
 }
 
+
 a:link{
     text-decoration: none!important;
   }
@@ -364,6 +365,21 @@ a:link{
     width: 100%;
     position: absolute;
     z-index: -1;
+}
+
+.load-fail-wrapper {
+    background: gray;
+    height: 300px;
+    width: 300px;
+    position: relative;
+  }
+
+#load-fail {
+    position: fixed;
+    z-index: -2;
+    top: 50%;
+    left: 50%;
+    margin: -50px 0 0 -50px;
 }
 
 #about-text {
