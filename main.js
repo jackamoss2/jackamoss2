@@ -155,6 +155,9 @@ window.addEventListener('mousemove', event => {
 window.addEventListener('click', event => {
     addImpact(event, 100)
 })
+window.addEventListener('touchstart', event => {
+    addImpact(event, 100)
+})
 var pointerPrevious = null;
 function addImpact(event, duration) {
     // three raycaster
