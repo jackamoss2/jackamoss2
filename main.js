@@ -1,8 +1,11 @@
 // uses wave simulation equations derived in this article:
 // https://medium.com/@matiasortizdiez/beginners-introduction-to-natural-simulation-in-python-ii-simulating-a-water-ripple-809356ffcb43
 
-// import * as THREE from 'three';
+import * as THREE from 'three';
 // import { OrbitControls } from 'OrbitControls';
+
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+//   const controls = new OrbitControls( camera, renderer.domElement );
 
 
 
@@ -29,12 +32,12 @@ renderer.shadowMap.enabled = true;
 
 
 // controls setup - remove when implementing? ----------------
-// const controls = new OrbitControls(camera, renderer.domElement);
-// // disable interaction
-// controls.rotateSpeed = 0;
-// controls.zoomSpeed = 0;
-// controls.target = new THREE.Vector3(0, 0, 0);
-// controls.update();
+const controls = new OrbitControls(camera, renderer.domElement);
+// disable interaction
+controls.rotateSpeed = 0;
+controls.zoomSpeed = 0;
+controls.target = new THREE.Vector3(0, 0, 0);
+controls.update();
 
 // light setup - rearrange before implimenting ----------------
 // ambient light
