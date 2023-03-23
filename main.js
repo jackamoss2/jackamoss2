@@ -1,8 +1,8 @@
 // uses wave simulation equations derived in this article:
 // https://medium.com/@matiasortizdiez/beginners-introduction-to-natural-simulation-in-python-ii-simulating-a-water-ripple-809356ffcb43
 
-import * as THREE from 'three';
-import { OrbitControls } from 'OrbitControls';
+// import * as THREE from 'three';
+// import { OrbitControls } from 'OrbitControls';
 
 
 
@@ -13,9 +13,9 @@ scene.background = new THREE.Color(0x000000);
 //a
 // camera setup ----------------
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.setZ(-70);
+camera.position.setZ(-140);
 camera.position.setX(0);
-camera.position.setY(50);
+camera.position.setY(90);
 
 
 // renderer setup ----------------
@@ -29,12 +29,12 @@ renderer.shadowMap.enabled = true;
 
 
 // controls setup - remove when implementing? ----------------
-const controls = new OrbitControls(camera, renderer.domElement);
-// disable interaction
-controls.rotateSpeed = 0;
-controls.zoomSpeed = 0;
-controls.target = new THREE.Vector3(0, 0, 0);
-controls.update();
+// const controls = new OrbitControls(camera, renderer.domElement);
+// // disable interaction
+// controls.rotateSpeed = 0;
+// controls.zoomSpeed = 0;
+// controls.target = new THREE.Vector3(0, 0, 0);
+// controls.update();
 
 // light setup - rearrange before implimenting ----------------
 // ambient light
@@ -80,7 +80,7 @@ scene.add(dirLight);
 const nodesPerLength = 1;
 
 const x_min = 0;
-const x_max = 100; // length from x_min - KEEP EVEN OR BREAKS CODE
+const x_max = 200; // length from x_min - KEEP EVEN OR BREAKS CODE
 const Lx = x_max - x_min; // total length of plane
 const nx = (nodesPerLength*Lx)+1; // number of nodes in x dimension
 const dx = Lx / (nx - 1); // distance between nodes
@@ -147,11 +147,12 @@ const pointer = new THREE.Vector2();
 const vector3 = new THREE.Vector3();
 const maxClickDistance = 10;
 window.addEventListener('mousemove', event => {
-    addImpact(event, 11)
+    addImpact(event, 5)
 })
 window.addEventListener('click', event => {
     addImpact(event, 100)
 })
+var pointerPrevious = null;
 function addImpact(event, duration) {
     // three raycaster
     pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -177,9 +178,55 @@ function addImpact(event, duration) {
 
                 if (distance < .5 && x!=0 && x!=x_max*nodesPerLength && y!=0 && y!=y_max*nodesPerLength) { // prevents modifying edge vertices 
                     // add i to impacted points list
-                    impacts.push([x,y,duration]);
+                    // impacts.push([x,y,duration]);
+                    if (pointerPrevious) {
+
+                        const slope = (y-pointerPrevious.y)/(x-pointerPrevious.x);
+                        
+                        var xDir = null;
+                        var yDir = null;
+                        if (x >= pointerPrevious.x) {
+                            xDir = 1;
+                        }
+                        else {
+                            xDir = -1;
+                        }
+                        if (y >= pointerPrevious.y) {
+                            yDir = 1;
+                        }
+                        else {
+                            yDir = -1;
+                        }
+    
+                        if (slope >= 1) { // if dy >= dx
+                            var yi = 0;
+                            while (yi <= Math.abs(y - pointerPrevious.y)) {
+                                const yj = (yDir * yi) + pointerPrevious.y;
+                                const xj = Math.round((yDir * yi) / slope) + pointerPrevious.x;
+                                yi = yi + 1;
+                                impacts.push([xj, yj, duration])
+                            }
+                        }
+                        else {
+                            var xi = 0;
+                            while (xi <= Math.abs(x - pointerPrevious.x)) {
+                                const xj = (xDir * xi) + pointerPrevious.x;
+                                const yj = Math.round((xDir * xi) * slope) + pointerPrevious.y;
+                                xi = xi + 1;
+                                impacts.push([xj, yj, duration])
+                            }
+                        }
+                    }
+                    
+                    pointerPrevious = {
+                        x: x,
+                        y: y
+                    }
                 }
             }
+    }
+    else {
+        pointerPrevious = null;
     }
 }
 
@@ -203,7 +250,7 @@ function animate() {
     // const t = 1; // t is present, t-1 is past
     for (var x=1; x<nx-1; x++) {
         for (var y=1; y<ny-1; y++) {
-            u[2][x][y] = 0.5* c * (Math.pow(dt,2)/Math.pow(dx,2)) * ((uCopy[1][x+1][y] - 2*uCopy[1][x][y] + uCopy[1][x-1][y]) + (uCopy[1][x][y+1] - 2*uCopy[1][x][y] +uCopy[1][x][y-1]) - nu * (uCopy[1][x][y] - uCopy[0][x][y])/dt) + 2*uCopy[1][x][y] - uCopy[0][x][y];
+            u[2][x][y] = 0.1* c * (Math.pow(dt,2)/Math.pow(dx,2)) * ((uCopy[1][x+1][y] - 2*uCopy[1][x][y] + uCopy[1][x-1][y]) + (uCopy[1][x][y+1] - 2*uCopy[1][x][y] +uCopy[1][x][y-1]) - nu * (uCopy[1][x][y] - uCopy[0][x][y])/dt) + 2*uCopy[1][x][y] - uCopy[0][x][y];
 
             if (x == nx-2 && y == ny-2) {
                 computing = false;
@@ -216,7 +263,8 @@ function animate() {
     for (var i in impacts) {
         i = parseInt(i)
         impacts[i][2] = impacts[i][2] - 1
-        u[2][impacts[i][0]][impacts[i][1]] = -Math.sin((time+1) / 10)
+        // u[2][impacts[i][0]][impacts[i][1]] = -Math.sin((time+1) / 10)
+        u[2][impacts[i][0]][impacts[i][1]] = -1
     }
     
     // remove impacts when completed
